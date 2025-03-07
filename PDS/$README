@@ -1,0 +1,66 @@
+
+The first 3 Rexxes can be invoked as TSO commands, e.g. TSO FERNSIDE
+
+PVCPUPCT.  Displays current CPU% in pseudo-graphical format.
+  Needs some simple customisation, such as supplying LPAR (system) names.
+  Do a FIND on "custom" to see where in the code things need
+  to be customised.
+
+MANDELBR - an ISPF implementation of displaying the Mandelbrot Set in 8
+  glorious colours.  Works best on 62x160 screens.  Scrollable and
+  zoomable.
+  Use PF19 and PF20 to zoom in and out, and PF7, PF8, PF10 and PF11
+  to move up, down, left and right.
+  Still has bugs, so constructive feedback is welcome.
+
+FERNSIDE - an ISPF implementation of the Barnsley Fern.  Inspired by
+           New York's Dan Shiffman.
+
+All of the above are demonstrations of using ISPF dynamic areas with
+shadow variables which allow one to display characters of different
+colours right next to each other (i.e. it doesn't cost you an attribute
+byte - very nice).
+
+The next 3 Rexxes are all edit macros.
+
+SYNTAX - a COBOL syntax checker (edit macro) which invokes the compiler
+    and interleaves error messages right in your source code as notes.
+    Obviates the need to switch between an error listing and the source.
+    Instructions: While editing a COBOL program enter SYNTAX as a
+    primary command. The first time you invoke SYNTAX you should also
+    specify something (any character will do) as an argument, for example,
+    SYNTAX P which will bring up the configuration panel where you can
+    specify input required by the COBOL compiler.
+    Tip: To use the syntax checker iteratively:
+    enter RES;SAVE;SYNTAX as a primary command.
+    Note: There is a dependency on CBTTAPE File 452 for dynamic STEPLIB
+          support.
+
+PVJCL - a Rexx edit macro which, when run while viewing unfamiliar
+    JCL, displays the JCL formatted on an ISPF panel to make it easier
+    to understand.  Designed for those either not familiar with JCL at
+    all or not familiar with a large JCL member.  Just makes it easier
+    to understand.
+
+PVALLOCD -  a Rexx edit macro used in SDSF to display JESYSMSG
+    allocations in a friendly format so that you can see what data
+    sets were used by the job.  Allows direct browsing of the data
+    sets by cursor position.
+
+    Invoke PVALLOCD from within SDSF by entering the line command SE
+    next to a job that has already run. It's more efficient to enter
+    the SE after first entering a ? to display the various output DDs
+    for the job.  Enter the SE line command on the JESYSMSG line.
+    Once you are editing the job output, enter PVALLOCD as a primary
+    command to display the data set allocations.  You can browse the
+    data sets by positioning the cursor anywhere on the name and
+    hitting enter.
+
+Copying and use of this material is allowed.  I retain ownership.
+None of these routines may be sold. If you have error corrections
+or improvements I would be happy to hear from you.  If you use
+them or learn something from then I'd be even happier to hear from you.
+
+Contact details: Peter Vels
+                 peter.vels@gmail.com
+
