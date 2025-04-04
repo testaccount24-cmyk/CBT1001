@@ -1,0 +1,19 @@
+//INSTALL JOB
+//*
+//* Instructions: Modify all the data set names below then submit
+//*
+//* "this.pds" is the name of the source PDS you are now editing
+//*
+//* "your.sysexec.library" and "your.ispplib.library" are the names
+//* of ISPF SYSEXEC and ISPPLIB at your installation that you have
+//* UPDATE access to and are in your ISPF library concatenation.
+//*
+//RECEIVE   EXEC PGM=IKJEFT1B
+//SYSTSIN   DD   *
+ PROFILE NOPREFIX
+ RECEIVE INDS(this.pds(EXECS)
+         DA(your.sysexec.library)
+ RECEIVE INDS(this.pds(PANELS)
+         DA(your.ispplib.library)
+//SYSTSPRT  DD   SYSOUT=*
+//

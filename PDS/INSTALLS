@@ -1,0 +1,20 @@
+//SBGOLOBV JOB ,'SAM GOLOB',CLASS=B,
+//    MSGCLASS=X,NOTIFY=&SYSUID
+//*
+//* Instructions: Modify all the data set names below then submit
+//*
+//* "this.pds" is the name of the source PDS you are now editing
+//*
+//* "your.sysexec.library" and "your.ispplib.library" are the names
+//* of ISPF SYSEXEC and ISPPLIB at your installation that you have
+//* UPDATE access to and are in your ISPF library concatenation.
+//*
+//RECEIVE   EXEC PGM=IKJEFT1B
+//SYSTSIN   DD   *
+ PROFILE NOPREFIX
+ RECEIVE INDS(SBGOLOB.CBT501.FILE1001(EXECS)
+         DA(SBGOLOB.PVELS.EXECS)
+ RECEIVE INDS(SBGOLOB.CBT501.FILE1001(PANELS)
+         DA(SBGOLOB.PVELS.PANELS)
+//SYSTSPRT  DD   SYSOUT=*
+//
